@@ -52,11 +52,14 @@ footer {
   display: flex;
   list-style: none;
 }
+input:focus {
+  outline: none;
+}
 /* Stile Aside */
 .chat {
   width: 350px;
   height: 80vh;
-  background-color: lightblue;
+  background-color: #F3EEEA;
   position: absolute;
   left: 0;
 }
@@ -73,6 +76,7 @@ footer {
 }
 .btn-icons li a {
   padding: 8px;
+  color: #B1B1B1;
 }
 .avatar img {
   max-width: 50px;
@@ -88,6 +92,7 @@ footer {
 }
 .notify i {
   font-size: 30px;
+  color: #fff;
 }
 .text-notify {
   margin-left: 8px;
@@ -96,7 +101,10 @@ footer {
 .src {
   width: 100%;
   border-radius: 4px;
+  margin-top: 10px;
   padding: 4px;
+  border: transparent;
+  height: 40px;
 }
 .friends {
   margin-top: 10px;
@@ -118,12 +126,16 @@ footer {
 }
 /* Stile Main */
 .wrapper-chat {
-  width: 500px;
+  width: 550px;
   margin: auto;
   margin-top: 20px;
 }
+.wrapper-chat small {
+  font-size: 10px;
+  color: #B1B1B1;
+}
 .msg-user , .msg-friend {
-  width: 120px;
+  width: 110px;
   height: auto;
   border-radius: 4px;
   display: block;
@@ -174,9 +186,11 @@ footer {
 }
 .input-wrapper i {
   font-size: 25px;
+  color: #6B7376;
 }
 .chat-input {
   width: 500px;
   height: 40px;
   border-radius: 6px;
+  border: transparent;
 }

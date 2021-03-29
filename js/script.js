@@ -70,7 +70,7 @@ data: {
        avatar: '_4',
        visible: true,
        messages: [{
-           date: '10/01/2020 15:30:55',
+           date: dayjs("12-25-1995", "MM-DD-YYYY"),
            message: 'Lo sai che ha aperto una nuova pizzeria?',
            status: 'sent'
        },
@@ -83,6 +83,7 @@ data: {
    },
 ],
  contactIndex: 0,
+ newMsg: '',
 
 
 

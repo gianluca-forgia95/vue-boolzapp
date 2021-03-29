@@ -85,7 +85,8 @@
       <main>
     <div class="wrapper-chat">
       <div v-for="(msg, index) in contacts[contactIndex].messages" :class="{'msg-friend': msg.status == 'received', 'msg-user': msg.status == 'sent' }">
-       {{ msg.message }}
+       <p>{{ msg.message }}</p>
+       <p><small>{{ msg.date }}</small></p>
       </div>
 
 
@@ -98,7 +99,7 @@
       <footer>
         <div class="input-wrapper">
           <a href="#"><i class="far fa-smile"></i></a>
-          <input type="text" name="" value="" class="chat-input">
+          <input type="text" name="" value="" placeholder="scrivi qui..." class="chat-input">
           <a href="#"><i class="fas fa-microphone"></i></a>
         </div>
       </footer>
@@ -108,7 +109,7 @@
     </div>
     <!-- Day Js -->
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
-    <script>dayjs().format()</script>
+
     <!-- /Day Js -->
    <script src="js/script.js" charset="utf-8"></script>
   </body>
