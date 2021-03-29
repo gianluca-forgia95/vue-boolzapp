@@ -14,18 +14,23 @@ body {
   height: 80vh;
   background-color: green;
   margin: auto;
-  position: absolute;
-  top: 10vh;
-  left: 35vh;
-  bottom: 10vh;
+  position: relative;
+  top: 10%;
 
 }
 
+header {
+  height: 100px;
+  position: fixed;
+  background-color: #fff;
+  margin-left: 350px;
+  width: 600px;
+}
 .chat {
   width: 350px;
   height: 80vh;
   background-color: lightblue;
-  position: relative;
+  position: absolute;
   display: flex;
   flex-direction: column;
   left: 0;
