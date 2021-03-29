@@ -51,7 +51,7 @@
 
           <div class="friends">
             <ul>
-              <li v-for='(user, index) in contacts'>  <img :src="'img/avatar' + contacts[index].avatar + '.jpg'" alt="">
+              <li v-for='(user, index) in contacts' v-on:click="changeUser(index)">  <img :src="'img/avatar' + contacts[index].avatar + '.jpg'" alt="">
                 {{user.name}}
               </li>
             </ul>
@@ -65,8 +65,8 @@
 
       <header>
         <div class="avatar">
-          <img src="img/avatar_8.jpg" alt="">
-          <h3>Francesco</h3>
+          <img :src="'img/avatar' + contacts[contactIndex].avatar + '.jpg'" alt="">
+          <h3>{{ contacts[contactIndex].name }}</h3>
         </div>
         <div class="btn-icons">
           <ul class="list-inline">

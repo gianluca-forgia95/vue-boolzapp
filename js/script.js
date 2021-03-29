@@ -81,11 +81,16 @@ data: {
            }
        ],
    },
-]
+],
+ contactIndex: 0,
+
 
 
    },
    methods: {
+     changeUser: function(index) {
+       this.contactIndex = index;
+     }
 
 
 
