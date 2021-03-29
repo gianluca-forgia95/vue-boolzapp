@@ -106,8 +106,13 @@ footer {
   list-style: none;
   line-height: 20px;
 }
+.friends li {
+  padding: 10px 10px;
+}
 .friends img {
   max-width: 50px;
+  border-radius: 50%;
+  vertical-align: middle;
 }
 /* Stile Main */
 .wrapper-chat {
