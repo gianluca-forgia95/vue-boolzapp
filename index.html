@@ -2,6 +2,10 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- /Responsive -->
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+SC:wght@400;700;900&display=swap" rel="stylesheet">
@@ -62,7 +66,7 @@
     <!--/Notifiche  -->
       </aside>
     <!-- /Aside Chat -->
-
+    <!-- Chat Utente -->
       <header>
         <div class="avatar">
           <img :src="'img/avatar' + contacts[contactIndex].avatar + '.jpg'" alt="">
@@ -80,20 +84,17 @@
       </header>
       <main>
     <div class="wrapper-chat">
-      <div class="msg-friend">
-        <p>Ciao</p>
+      <div v-for="(msg, index) in contacts[contactIndex].messages" :class="{'msg-friend': msg.status == 'received', 'msg-user': msg.status == 'sent' }">
+       {{ msg.message }}
       </div>
 
-      <div class="msg-user">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididun</p>
-      </div>
+
 
 
     </div>
 
-
-
       </main>
+
       <footer>
         <div class="input-wrapper">
           <a href="#"><i class="far fa-smile"></i></a>
@@ -101,7 +102,7 @@
           <a href="#"><i class="fas fa-microphone"></i></a>
         </div>
       </footer>
-
+  <!-- /Chat Utente -->
 
 
     </div>

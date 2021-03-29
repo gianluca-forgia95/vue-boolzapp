@@ -129,6 +129,7 @@ footer {
   display: block;
   position: relative;
   padding: 10px;
+  margin-bottom: 10px;
 }
 .msg-friend {
   background-color: #fff;
