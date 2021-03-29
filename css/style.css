@@ -17,6 +17,8 @@ body {
   margin: auto;
   position: relative;
   top: 10%;
+  font-family: 'Lato', sans-serif;
+
 
 }
 
@@ -43,12 +45,34 @@ footer {
   margin-left: 350px;
   width: 600px;
 }
+/* Mix */
+
+.list-inline {
+  display: flex;
+  list-style: none;
+}
+/* Stile Aside */
 .chat {
   width: 350px;
   height: 80vh;
   background-color: lightblue;
   position: absolute;
-  display: flex;
-  flex-direction: column;
   left: 0;
+}
+.user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+.avatar {
+  display: flex;
+  align-items: center;
+}
+.btn-icons li a {
+  padding: 4px;
+}
+.avatar img {
+  max-width: 50px;
+  margin-right: 5px;
 }
