@@ -13,9 +13,20 @@ body {
   width: 950px;
   height: 80vh;
   background-color: green;
+  margin: auto;
   position: absolute;
-  top: 10%;
-  left: 20%;
+  top: 10vh;
+  left: 35vh;
+  bottom: 10vh;
 
+}
 
+.chat {
+  width: 350px;
+  height: 80vh;
+  background-color: lightblue;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  left: 0;
 }
