@@ -64,6 +64,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   height: 100px;
+  background-color: #B1B1B1;
 }
 .avatar {
   display: flex;
@@ -75,4 +76,18 @@ footer {
 .avatar img {
   max-width: 50px;
   margin-right: 5px;
+}
+.notify {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100px;
+  background-color: #8EDAFC;
+}
+.notify i {
+  font-size: 30px;
+}
+.text-notify {
+  margin-left: 8px;
+  font-size: 14px;
 }
