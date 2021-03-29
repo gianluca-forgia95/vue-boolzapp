@@ -47,12 +47,13 @@
 
         </div>
         <div class="chat-list">
-          <input class="src" type="text" name="" value="" placeholder="cerca e inizia una nuova chat">
+          <input class="src" type="text" name="" value="" placeholder="cerca o inizia una nuova chat">
 
           <div class="friends">
             <ul>
-              <li v-for='user in contacts'>{{ user.name }}</li>
-
+              <li v-for='(user, index) in contacts'>  <img :src="'img/avatar' + contacts[index].avatar + '.jpg'" alt="">
+                {{user.name}}
+              </li>
             </ul>
           </div>
 
@@ -63,16 +64,28 @@
     <!-- /Aside Chat -->
 
       <header>
+        <div class="avatar">
+          <img src="img/avatar_8.jpg" alt="">
+          <h3>Francesco</h3>
+        </div>
+        <div class="btn-icons">
+          <ul class="list-inline">
+            <li><a href="#"><i class="fas fa-search"></i></a></li>
+            <li><a href="#"><i class="fas fa-comment-alt"></i></a></li>
+            <li><a href="#"><i class="fas fa-ellipsis-v"></i></a></li>
+          </ul>
+
+        </div>
 
       </header>
       <main>
     <div class="wrapper-chat">
       <div class="msg-friend">
-
+        <p>Ciao</p>
       </div>
-      
-      <div class="msg-user">
 
+      <div class="msg-user">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididun</p>
       </div>
 
 
@@ -81,7 +94,13 @@
 
 
       </main>
-      <footer></footer>
+      <footer>
+        <div class="input-wrapper">
+          <a href="#"><i class="far fa-smile"></i></a>
+          <input type="text" name="" value="" class="chat-input">
+          <a href="#"><i class="fas fa-microphone"></i></a>
+        </div>
+      </footer>
 
 
 
