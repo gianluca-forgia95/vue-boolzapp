@@ -13,7 +13,6 @@ body {
 #root {
   width: 950px;
   height: 80vh;
-  background-color: green;
   margin: auto;
   position: relative;
   top: 10%;
@@ -95,4 +94,52 @@ footer {
   width: 100%;
   border-radius: 4px;
   padding: 4px;
+}
+/* Stile Main */
+.wrapper-chat {
+  width: 500px;
+  margin: auto;
+}
+.msg-user , .msg-friend {
+  width: 100px;
+  height: 60px;
+  border-radius: 4px;
+  display: block;
+  position: relative;
+}
+.msg-friend {
+  background-color: #fff;
+  padding: 10px;
+  right: 0;
+
+
+}
+.msg-user {
+  background-color: #D5F9BA;
+  margin-left: 80%;
+}
+.msg-friend::before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 8px solid #fff;
+  position: absolute;
+  left: -6px;
+  bottom: 0;
+}
+.msg-user::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid #D5F9BA;
+  position: absolute;
+  right: -6px;
+  bottom: 0;
+
 }

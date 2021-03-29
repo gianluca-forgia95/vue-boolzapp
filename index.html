@@ -52,6 +52,7 @@
           <div class="friends">
             <ul>
               <li v-for='user in contacts'>{{ user.name }}</li>
+
             </ul>
           </div>
 
@@ -65,6 +66,18 @@
 
       </header>
       <main>
+    <div class="wrapper-chat">
+      <div class="msg-friend">
+
+      </div>
+      
+      <div class="msg-user">
+
+      </div>
+
+
+    </div>
+
 
 
       </main>
@@ -73,7 +86,10 @@
 
 
     </div>
-
+    <!-- Day Js -->
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script>dayjs().format()</script>
+    <!-- /Day Js -->
    <script src="js/script.js" charset="utf-8"></script>
   </body>
 </html>
