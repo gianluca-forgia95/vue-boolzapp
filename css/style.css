@@ -6,5 +6,16 @@
 body {
   background: rgb(219,219,210);
   background: linear-gradient(0deg, rgba(219,219,210,1) 80%, rgba(0,150,136,1) 80%);
+  background-repeat: no-repeat;
   height: 100vh;
+}
+#root {
+  width: 950px;
+  height: 80vh;
+  background-color: green;
+  position: absolute;
+  top: 10%;
+  left: 20%;
+
+
 }
