@@ -95,6 +95,7 @@ data: {
 
 
 
+
    },
    methods: {
      changeUser: function(index) {
@@ -111,17 +112,17 @@ data: {
 
                 this.userMsg = '';
                 setTimeout( this.answerOk , 1000);
+                
             }
          },
      answerOk: function() {
-
        const fakeAnswer = {
          message: 'ok',
          date: dayjs().format('DD/MM/YYYY HH:mm'),
          status: 'received'
        };
        this.contacts[this.contactIndex].messages.push(fakeAnswer);
-       console.log(fakeAnswer);
+
      }
 
 

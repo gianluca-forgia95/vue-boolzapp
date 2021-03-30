@@ -57,13 +57,11 @@
 
           <div class="friends">
             <ul>
-              <li v-for='(user, index) in contacts' v-on:click="changeUser(index)">  <img :src="'img/avatar' + contacts[index].avatar + '.jpg'" :alt="user.name">
+              <li v-for='(user, index) in contacts' @click="changeUser(index)" :class=" contactIndex == index ? 'bg-grey' : '' ">  <img :src="'img/avatar' + contacts[index].avatar + '.jpg'" :alt="user.name">
                 {{user.name}}
               </li>
             </ul>
           </div>
-
-
         </div>
 
       </aside>
@@ -90,7 +88,7 @@
     <main>
       <!-- Chat -->
      <div class="wrapper-chat">
-       <div v-for="(msg, index) in contacts[contactIndex].messages" :class="{'msg-friend': msg.status == 'received', 'msg-user': msg.status == 'sent' }">
+       <div v-for="( msg ) in contacts[contactIndex].messages" :class="{'msg-friend': msg.status == 'received', 'msg-user': msg.status == 'sent' }">
         <p>{{ msg.message }}</p>
         <p><small>{{ msg.date }}</small></p>
        </div>

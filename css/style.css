@@ -27,14 +27,16 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 10;
 }
 main {
   margin-left: 350px;
   width: 600px;
   height: calc(100% - 180px);
   background-image: url('../img/mine.jpg');
+  scroll-behavior: smooth;
   position: absolute;
-  top: 100px;
+  margin-top: 100px;
   overflow-y: auto;
 }
 footer {
@@ -54,6 +56,9 @@ footer {
 input:focus {
   outline: none;
 }
+.bg-grey {
+  background-color: #EAEAEA;
+}
 /* Stile Aside */
 .chat {
   width: 350px;
@@ -61,6 +66,9 @@ input:focus {
   background-color: #F3EEEA;
   position: absolute;
   left: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
 }
 .user {
   display: flex;
@@ -121,13 +129,14 @@ input:focus {
 
 .friends {
   margin-top: 10px;
-  height: 342px;
   background-color: #fff;
-  overflow-y: auto;
+  height: calc(100% - 40px);
 }
 .friends ul {
   list-style: none;
   line-height: 20px;
+  height: 300px;
+
 }
 .friends li {
   padding: 10px 10px;
