@@ -6,6 +6,8 @@ data: {
        name: 'Michele',
        avatar: '_1',
        visible: true,
+       lastSeen: '20:45',
+       dayLastSeen: 'Ieri',
        messages: [{
            date: '10/01/2020 15:30:55',
            message: 'Hai portato a spasso il cane?',
@@ -27,6 +29,8 @@ data: {
        name: 'Fabio',
        avatar: '_2',
        visible: true,
+       lastSeen: '0:41',
+       dayLastSeen: 'Ieri',
        messages: [{
            date: '20/03/2020 16:30:00',
            message: 'Ciao come stai?',
@@ -48,6 +52,8 @@ data: {
        name: 'Samuele',
        avatar: '_3',
        visible: true,
+       lastSeen: '20:22',
+       dayLastSeen: 'Oggi',
        messages: [{
            date:  '28/03/2020 10:10:40',
            message: 'La Marianna va in campagna',
@@ -69,6 +75,8 @@ data: {
        name: 'Luisa',
        avatar: '_io',
        visible: true,
+       lastSeen: '10:45',
+       dayLastSeen: 'Oggi',
        messages: [{
            date: "12/25/1995 11:12:45",
            message: 'Lo sai che ha aperto una nuova pizzeria?',
@@ -102,7 +110,7 @@ data: {
                 this.contacts[index].messages.push(newMsg);
 
                 this.userMsg = '';
-                console.log(newMsg);
+
             }
          }
 

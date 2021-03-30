@@ -25,7 +25,7 @@
     <div id="root">
       <!-- Aside Chat -->
       <aside class="chat">
-        <!-- User section -->
+        <!-- User Info -->
         <div class="user">
           <div class="avatar">
             <img src="img/avatar_4.jpg" alt="Me">
@@ -39,17 +39,16 @@
             </ul>
           </div>
         </div>
-    <!-- User section -->
+    <!-- /User Info -->
     <!-- Notifiche  -->
         <div class="notify">
-
             <a href="#"><i class="fas fa-bell-slash"></i></a>
             <div class="text-notify">
               <h4>Ricevi notifiche di nuovi messaggi</h4>
               <p><a href="#">Attiva notifiche di desktop</a></p>
             </div>
-
         </div>
+    <!--/Notifiche  -->
         <div class="chat-list">
           <div class="search-interactions">
             <label for="src"><i class="fas fa-search"></i></label>
@@ -66,16 +65,18 @@
 
 
         </div>
-    <!--/Notifiche  -->
+
       </aside>
     <!-- /Aside Chat -->
     <!-- Chat Utente -->
       <header>
+        <!-- Friend Info -->
         <div class="avatar">
           <img :src="'img/avatar' + contacts[contactIndex].avatar + '.jpg'" alt="">
           <h3>{{ contacts[contactIndex].name }}</h3>
-          <p class="last-seen">Ultimo accesso ieri alle 20:19</p>
+          <p class="last-seen">Ultimo accesso {{ contacts[contactIndex].dayLastSeen }} alle {{ contacts[contactIndex].lastSeen }}</p>
         </div>
+        <!-- /Friend Info -->
         <div class="btn-icons">
           <ul class="list-inline">
             <li><a href="#"><i class="fas fa-search"></i></a></li>
@@ -86,26 +87,25 @@
         </div>
 
       </header>
-      <main>
-    <div class="wrapper-chat">
-      <div v-for="(msg, index) in contacts[contactIndex].messages" :class="{'msg-friend': msg.status == 'received', 'msg-user': msg.status == 'sent' }">
-       <p>{{ msg.message }}</p>
-       <p><small>{{ msg.date }}</small></p>
-      </div>
-
-
-
-
-    </div>
-
-      </main>
+    <main>
+      <!-- Chat -->
+     <div class="wrapper-chat">
+       <div v-for="(msg, index) in contacts[contactIndex].messages" :class="{'msg-friend': msg.status == 'received', 'msg-user': msg.status == 'sent' }">
+        <p>{{ msg.message }}</p>
+        <p><small>{{ msg.date }}</small></p>
+       </div>
+     </div>
+     <!-- /Chat -->
+   </main>
 
       <footer>
+      <!-- Input Message -->
         <div class="input-wrapper">
           <a href="#"><i class="far fa-smile"></i></a>
           <input type="text" name="" value="" placeholder="scrivi qui..." class="chat-input" v-model='userMsg' @keyup.13='addMsg(contactIndex)'>
           <a href="#"><i class="fas fa-microphone"></i></a>
         </div>
+     <!-- /Input Message -->
       </footer>
   <!-- /Chat Utente -->
 
