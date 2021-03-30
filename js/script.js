@@ -112,7 +112,7 @@ data: {
 
                 this.userMsg = '';
                 setTimeout( this.answerOk , 1000);
-                
+
             }
          },
      answerOk: function() {

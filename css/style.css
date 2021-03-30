@@ -18,8 +18,13 @@ body {
   top: 10%;
   font-family: 'Lato', sans-serif;
 }
+.wrapper {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
 header {
-  height: 100px;
+  height: 13vh;
   position: fixed;
   background-color: #EAEAEA;
   margin-left: 350px;
@@ -32,7 +37,7 @@ header {
 main {
   margin-left: 350px;
   width: 600px;
-  height: calc(100% - 180px);
+  height: 60vh;
   background-image: url('../img/mine.jpg');
   scroll-behavior: smooth;
   position: absolute;
@@ -40,7 +45,7 @@ main {
   overflow-y: auto;
 }
 footer {
-  height: 80px;
+  height: 7vh;
   position: fixed;
   bottom: 10%;
   margin-left: 350px;
@@ -58,6 +63,7 @@ input:focus {
 }
 .bg-grey {
   background-color: #EAEAEA;
+  border-radius: 8px;
 }
 /* Stile Aside */
 .chat {
@@ -68,13 +74,12 @@ input:focus {
   left: 0;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
 }
 .user {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100px;
+  height: 13vh;
   background-color: #EAEAEA;
   padding: 0 5px;
   border-right: 1px solid #6B7376;
@@ -97,11 +102,11 @@ input:focus {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  height: 100px;
+  height: 6vh;
   background-color: #8EDAFC;
 }
 .notify i {
-  font-size: 30px;
+  font-size: 20px;
   color: #fff;
 }
 .text-notify {
@@ -124,13 +129,15 @@ input:focus {
   margin-right: 25px;
   padding: 4px;
   border: transparent;
-  height: 40px;
+  height: 5vh;
 }
 
 .friends {
   margin-top: 10px;
   background-color: #fff;
-  height: calc(100% - 40px);
+  height: 56vh;
+  overflow-y: auto;
+  border-radius: 10px;
 }
 .friends ul {
   list-style: none;
@@ -176,6 +183,7 @@ font-size: 11px;
   max-width: 180px;
   border-radius: 4px;
   font-size: 15px;
+  font-weight: bold;
   position: relative;
   padding: 8px;
   margin-bottom: 10px;
