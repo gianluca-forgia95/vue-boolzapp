@@ -49,17 +49,17 @@ data: {
        avatar: '_3',
        visible: true,
        messages: [{
-           date: '28/03/2020 10:10:40',
+           date:  '28/03/2020 10:10:40',
            message: 'La Marianna va in campagna',
            status: 'received'
        },
            {
-               date: '28/03/2020 10:20:10',
+               date:  '28/03/2020 10:20:10',
                message: 'Sicuro di non aver sbagliato chat?',
                status: 'sent'
            },
            {
-               date: '28/03/2020 16:15:22',
+               date:  '28/03/2020 10:20:10',
                message: 'Ah scusa!',
                status: 'received'
            }
@@ -67,15 +67,15 @@ data: {
    },
    {
        name: 'Luisa',
-       avatar: '_4',
+       avatar: '_io',
        visible: true,
        messages: [{
-           date: dayjs("12-25-1995", "MM-DD-YYYY"),
+           date: "12/25/1995 11:12:45",
            message: 'Lo sai che ha aperto una nuova pizzeria?',
            status: 'sent'
        },
            {
-               date: '10/01/2020 15:50:00',
+               date: '10/01/2020 15:50',
                message: 'Si, ma preferirei andare al cinema',
                status: 'received'
            }
@@ -83,7 +83,7 @@ data: {
    },
 ],
  contactIndex: 0,
- newMsg: '',
+ userMsg: '',
 
 
 
@@ -91,7 +91,20 @@ data: {
    methods: {
      changeUser: function(index) {
        this.contactIndex = index;
-     }
+     },
+     addMsg: function(index) {
+            if (this.userMsg != "" ) {
+                const newMsg = {
+                    message: this.userMsg,
+                    date: dayjs().format('DD/MM/YYYY HH:mm'),
+                    status: 'sent'
+                };
+                this.contacts[index].messages.push(newMsg);
+
+                this.userMsg = '';
+                console.log(newMsg);
+            }
+         }
 
 
 

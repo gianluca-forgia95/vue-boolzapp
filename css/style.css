@@ -17,9 +17,7 @@ body {
   position: relative;
   top: 10%;
   font-family: 'Lato', sans-serif;
-
 }
-
 header {
   height: 100px;
   position: fixed;
@@ -40,11 +38,12 @@ main {
   overflow-y: auto;
 }
 footer {
-  height: 100px;
+  height: 80px;
   position: fixed;
   bottom: 10%;
   margin-left: 350px;
   width: 600px;
+  background-color: #F3EEEA;
 }
 /* Mix */
 
@@ -98,18 +97,30 @@ input:focus {
   margin-left: 8px;
   font-size: 14px;
 }
+.search-interactions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.search-interactions label {
+  margin-left: 10px;
+  color: #B1B1B1;
+}
 .src {
-  width: 100%;
+  flex-basis: 80%;
   border-radius: 4px;
   margin-top: 10px;
+  margin-right: 25px;
   padding: 4px;
   border: transparent;
   height: 40px;
 }
+
 .friends {
   margin-top: 10px;
-  height: 100%;
+  height: 342px;
   background-color: #fff;
+  overflow-y: auto;
 }
 .friends ul {
   list-style: none;
@@ -119,26 +130,40 @@ input:focus {
   padding: 10px 10px;
   cursor: pointer;
 }
+.grey-bg {
+  background-color: #B1B1B1;
+}
 .friends img {
   max-width: 50px;
   border-radius: 50%;
   vertical-align: middle;
 }
 /* Stile Main */
+.last-seen {
+position: absolute;
+display: block;
+bottom: 0;
+padding: 2px;
+font-size: 13px;
+}
 .wrapper-chat {
   width: 550px;
   margin: auto;
   margin-top: 20px;
+  padding: 0 20px;
+
 }
 .wrapper-chat small {
   font-size: 10px;
   color: #B1B1B1;
 }
+
 .msg-user , .msg-friend {
-  width: 110px;
   height: auto;
+  min-width: 40px;
+  width: 180px;
   border-radius: 4px;
-  display: block;
+  font-size: 15px;
   position: relative;
   padding: 10px;
   margin-bottom: 10px;
@@ -150,7 +175,7 @@ input:focus {
 }
 .msg-user {
   background-color: #D5F9BA;
-  margin-left: 80%;
+  margin-left: 70%;
 }
 .msg-friend::before {
   content: '';
@@ -185,12 +210,12 @@ input:focus {
   margin-top: 20px;
 }
 .input-wrapper i {
-  font-size: 25px;
+  font-size: 15px;
   color: #6B7376;
 }
 .chat-input {
   width: 500px;
-  height: 40px;
+  height: 30px;
   border-radius: 6px;
   border: transparent;
 }

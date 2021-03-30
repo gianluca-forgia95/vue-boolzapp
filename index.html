@@ -28,7 +28,7 @@
         <!-- User section -->
         <div class="user">
           <div class="avatar">
-            <img src="img/avatar_io.jpg" alt="Me">
+            <img src="img/avatar_4.jpg" alt="Me">
             <h3>Gianluca</h3>
           </div>
           <div class="btn-icons">
@@ -51,11 +51,14 @@
 
         </div>
         <div class="chat-list">
-          <input class="src" type="text" name="" value="" placeholder="cerca o inizia una nuova chat">
+          <div class="search-interactions">
+            <label for="src"><i class="fas fa-search"></i></label>
+            <input class="src" type="text" name="" value="" placeholder="cerca o inizia una nuova chat">
+          </div>
 
           <div class="friends">
             <ul>
-              <li v-for='(user, index) in contacts' v-on:click="changeUser(index)">  <img :src="'img/avatar' + contacts[index].avatar + '.jpg'" alt="">
+              <li v-for='(user, index) in contacts' v-on:click="changeUser(index)">  <img :src="'img/avatar' + contacts[index].avatar + '.jpg'" :alt="user.name">
                 {{user.name}}
               </li>
             </ul>
@@ -71,12 +74,13 @@
         <div class="avatar">
           <img :src="'img/avatar' + contacts[contactIndex].avatar + '.jpg'" alt="">
           <h3>{{ contacts[contactIndex].name }}</h3>
+          <p class="last-seen">Ultimo accesso ieri alle 20:19</p>
         </div>
         <div class="btn-icons">
           <ul class="list-inline">
             <li><a href="#"><i class="fas fa-search"></i></a></li>
             <li><a href="#"><i class="fas fa-comment-alt"></i></a></li>
-            <li><a href="#"><i class="fas fa-ellipsis-v"></i></a></li>
+            <li><a href="#"><i class="fas fa-paperclip"></i></a></li>
           </ul>
 
         </div>
@@ -99,7 +103,7 @@
       <footer>
         <div class="input-wrapper">
           <a href="#"><i class="far fa-smile"></i></a>
-          <input type="text" name="" value="" placeholder="scrivi qui..." class="chat-input">
+          <input type="text" name="" value="" placeholder="scrivi qui..." class="chat-input" v-model='userMsg' @keyup.13='addMsg(contactIndex)'>
           <a href="#"><i class="fas fa-microphone"></i></a>
         </div>
       </footer>
@@ -109,7 +113,6 @@
     </div>
     <!-- Day Js -->
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
-
     <!-- /Day Js -->
    <script src="js/script.js" charset="utf-8"></script>
   </body>
