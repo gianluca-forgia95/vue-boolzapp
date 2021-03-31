@@ -37,7 +37,7 @@ header {
 main {
   margin-left: 350px;
   width: 600px;
-  height: 60vh;
+  height: calc(100% - 20vh);
   background-image: url('../img/mine.jpg');
   scroll-behavior: smooth;
   position: absolute;
@@ -51,6 +51,7 @@ footer {
   margin-left: 350px;
   width: 600px;
   background-color: #F3EEEA;
+  z-index: 10;
 }
 /* Mix */
 
@@ -135,18 +136,13 @@ input:focus {
 .friends {
   margin-top: 10px;
   background-color: #fff;
-  height: 56vh;
+  height:  56vh;
   overflow-y: auto;
   border-radius: 10px;
+  line-height: 70px;
 }
-.friends ul {
-  list-style: none;
-  line-height: 20px;
-  height: 300px;
 
-}
-.friends li {
-  padding: 10px 10px;
+.friends h3 {
   cursor: pointer;
 }
 .grey-bg {
@@ -155,7 +151,6 @@ input:focus {
 .friends img {
   max-width: 50px;
   border-radius: 50%;
-  vertical-align: middle;
 }
 /* Stile Main */
 .last-seen {
@@ -168,7 +163,7 @@ font-size: 11px;
 .wrapper-chat {
   width: 550px;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 10px;
   padding: 0 20px;
 
 }
@@ -230,7 +225,7 @@ font-size: 11px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .input-wrapper i {
   font-size: 15px;
@@ -241,4 +236,6 @@ font-size: 11px;
   height: 30px;
   border-radius: 6px;
   border: transparent;
+}
+
 }

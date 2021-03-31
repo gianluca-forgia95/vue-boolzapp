@@ -52,14 +52,16 @@
         <div class="chat-list">
           <div class="search-interactions">
             <label for="src"><i class="fas fa-search"></i></label>
-            <input class="src" type="text" name="" value="" placeholder="cerca o inizia una nuova chat">
+            <input class="src" type="text" name="" value="" placeholder="cerca o inizia una nuova chat" v-model="search">
           </div>
 
           <div class="friends">
             <ul>
-              <li v-for='(user, index) in contacts' @click="changeUser(index)" :class=" contactIndex == index ? 'bg-grey' : '' ">  <img :src="'img/avatar' + contacts[index].avatar + '.jpg'" :alt="user.name">
-                {{user.name}}
-              </li>
+              <div class="avatar" v-for='(user, index) in filteredContacts' @click="changeUser(index)" :class=" contactIndex == index ? 'bg-grey' : '' ">
+                <img :src="'img/avatar' + filteredContacts[index].avatar + '.jpg'" :alt="user.name">
+                <h3>{{user.name}}</h3>
+              
+              </div>
             </ul>
           </div>
         </div>
@@ -71,9 +73,9 @@
       <header>
         <!-- Friend Info -->
         <div class="avatar">
-          <img :src="'img/avatar' + contacts[contactIndex].avatar + '.jpg'" alt="">
-          <h3>{{ contacts[contactIndex].name }}</h3>
-          <p class="last-seen">Ultimo accesso {{ contacts[contactIndex].dayLastSeen }} alle {{ contacts[contactIndex].lastSeen }}</p>
+          <img :src="'img/avatar' + filteredContacts[contactIndex].avatar + '.jpg'" alt="">
+          <h3>{{ filteredContacts[contactIndex].name }}</h3>
+          <p class="last-seen">Ultimo accesso {{ filteredContacts[contactIndex].dayLastSeen }} alle {{ filteredContacts[contactIndex].lastSeen }}</p>
         </div>
         <!-- /Friend Info -->
         <div class="btn-icons">
@@ -89,7 +91,7 @@
     <main>
       <!-- Chat -->
      <div class="wrapper-chat">
-       <div v-for="( msg ) in contacts[contactIndex].messages" :class="{'msg-friend': msg.status == 'received', 'msg-user': msg.status == 'sent' }">
+       <div v-for="( msg ) in filteredContacts[contactIndex].messages" :class="{'msg-friend': msg.status == 'received', 'msg-user': msg.status == 'sent' }">
         <p>{{ msg.message }}</p>
         <p><small>{{ msg.date }}</small></p>
        </div>

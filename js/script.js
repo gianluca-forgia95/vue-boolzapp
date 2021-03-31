@@ -92,7 +92,7 @@ data: {
 ],
  contactIndex: 0,
  userMsg: '',
-
+ search: '',
 
 
 
@@ -126,6 +126,15 @@ data: {
      }
 
 
+
+   },
+
+   computed: {
+     filteredContacts: function() {
+       return this.contacts.filter((contact) => {
+          return contact.name.toLowerCase().match(this.search);
+       });
+     }
 
    }
 
