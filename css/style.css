@@ -9,13 +9,14 @@ body {
   background: linear-gradient(0deg, rgba(219,219,210,1) 80%, rgba(0,150,136,1) 80%);
   background-repeat: no-repeat;
   height: 100vh;
+  display: flex;
+  justify-content: center;
 }
 #root {
   width: 950px;
   height: 80vh;
   margin: auto;
   position: relative;
-  top: 10%;
   font-family: 'Lato', sans-serif;
 }
 .wrapper {
@@ -24,7 +25,7 @@ body {
   flex-direction: column;
 }
 header {
-  height: 13vh;
+  height: 100px;
   position: fixed;
   background-color: #EAEAEA;
   margin-left: 350px;
@@ -37,7 +38,7 @@ header {
 main {
   margin-left: 350px;
   width: 600px;
-  height: calc(100% - 20vh);
+  height: calc(100% - 180px);
   background-image: url('../img/mine.jpg');
   scroll-behavior: smooth;
   position: absolute;
@@ -45,7 +46,7 @@ main {
   overflow-y: auto;
 }
 footer {
-  height: 7vh;
+  height: 80px;
   position: fixed;
   bottom: 10%;
   margin-left: 350px;
@@ -54,7 +55,6 @@ footer {
   z-index: 10;
 }
 /* Mix */
-
 .list-inline {
   display: flex;
   list-style: none;
@@ -103,7 +103,8 @@ input:focus {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  height: 6vh;
+  height: 7vh;
+  padding: 10px 4px;
   background-color: #8EDAFC;
 }
 .notify i {
@@ -140,14 +141,16 @@ input:focus {
   overflow-y: auto;
   border-radius: 10px;
   line-height: 70px;
+  position: relative;
 }
-
 .friends h3 {
   cursor: pointer;
 }
-.grey-bg {
-  background-color: #B1B1B1;
-}
+/* .clear {
+  position: absolute;
+  right: 10px;
+  color: #B1B1B1;
+} */
 .friends img {
   max-width: 50px;
   border-radius: 50%;
@@ -200,9 +203,9 @@ font-size: 11px;
   display: block;
   width: 0;
   height: 0;
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
-  border-right: 8px solid #fff;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #fff;
   position: absolute;
   left: -6px;
   bottom: 0;
@@ -212,30 +215,48 @@ font-size: 11px;
   display: block;
   width: 0;
   height: 0;
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
-  border-left: 8px solid #D5F9BA;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #D5F9BA;
   position: absolute;
   right: -6px;
   bottom: 0;
-
 }
 /* Stile Footer */
 .input-wrapper {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 25px;
+
 }
 .input-wrapper i {
   font-size: 15px;
   color: #6B7376;
 }
+.list-emoji {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  position: absolute;
+  bottom: 80px;
+  width: 140px;
+  max-height: 250px;
+  overflow-y: auto;
+  background-color: #EAEAEA;
+  border-radius: 8px;
+  padding: 10px 5px;
+}
+.emo {
+  cursor: pointer;
+  flex-basis: 33%;
+  padding: 4px;
+}
+
 .chat-input {
   width: 500px;
   height: 30px;
   border-radius: 6px;
   border: transparent;
-}
-
 }

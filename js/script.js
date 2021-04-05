@@ -90,31 +90,48 @@ data: {
        ],
    },
 ],
+ emoji: [
+   '😀','😃','😄',
+   '😁','😆','😅',
+   '😂','🤣','😊',
+   '😇','🙂','🙃',
+   '😉','😌','😍',
+   '🥰','😘','😗',
+   '😙','😚','😋',
+   '😛','😝','🤪',
+   '🤬','🤯','🤡',
+   '💪','👋🏼','👩‍🔬',
+   '👨‍🔬','🧙‍♀️','👩‍❤️‍👩',
+   '🧦','🥽','🤑',
+   '🤖','👺','👾',
+   '👻','😷','🥶',
+   '😺','💼','🧦'
+],
+
  contactIndex: 0,
  userMsg: '',
  search: '',
-
-
+ showEmoji: false,
 
    },
    methods: {
      changeUser: function(index) {
        this.contactIndex = index;
      },
+
      addMsg: function(index) {
-            if (this.userMsg != "" ) {
-                const newMsg = {
-                    message: this.userMsg,
-                    date: dayjs().format('DD/MM/YYYY HH:mm'),
-                    status: 'sent'
+       if (this.userMsg != "" ) {
+           const newMsg = {
+                message: this.userMsg,
+                date: dayjs().format('DD/MM/YYYY HH:mm'),
+                status: 'sent'
                 };
-                this.contacts[index].messages.push(newMsg);
-
-                this.userMsg = '';
-                setTimeout( this.answerOk , 1000);
-
+               this.contacts[index].messages.push(newMsg);
+               this.userMsg = '';
+               setTimeout( this.answerOk , 1000);
             }
          },
+
      answerOk: function() {
        const fakeAnswer = {
          message: 'ok',
@@ -122,10 +139,15 @@ data: {
          status: 'received'
        };
        this.contacts[this.contactIndex].messages.push(fakeAnswer);
+     },
 
-     }
-
-
+     addEmoji: function(icon){
+            this.userMsg += this.emoji[icon];
+        },
+        
+     // removeChat: function(chat) {
+     //    this.contacts.splice(chat, 1);
+     //  },
 
    },
 

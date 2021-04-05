@@ -54,58 +54,60 @@
             <label for="src"><i class="fas fa-search"></i></label>
             <input class="src" type="text" name="" value="" placeholder="cerca o inizia una nuova chat" v-model="search">
           </div>
-
-          <div class="friends">
-            <ul>
+          <div class="friends" v-if='contacts.length > 0'>
               <div class="avatar" v-for='(user, index) in filteredContacts' @click="changeUser(index)" :class=" contactIndex == index ? 'bg-grey' : '' ">
                 <img :src="'img/avatar' + filteredContacts[index].avatar + '.jpg'" :alt="user.name">
                 <h3>{{user.name}}</h3>
-              
+                <!-- <i class="clear fas fa-archive" @click="removeChat(contactIndex)"></i> -->
               </div>
-            </ul>
           </div>
         </div>
-
       </aside>
     <!-- /Aside Chat -->
     <!-- Chat Utente -->
     <div class="wrapper">
-      <header>
-        <!-- Friend Info -->
-        <div class="avatar">
-          <img :src="'img/avatar' + filteredContacts[contactIndex].avatar + '.jpg'" alt="">
-          <h3>{{ filteredContacts[contactIndex].name }}</h3>
-          <p class="last-seen">Ultimo accesso {{ filteredContacts[contactIndex].dayLastSeen }} alle {{ filteredContacts[contactIndex].lastSeen }}</p>
-        </div>
-        <!-- /Friend Info -->
-        <div class="btn-icons">
-          <ul class="list-inline">
-            <li><a href="#"><i class="fas fa-search"></i></a></li>
-            <li><a href="#"><i class="fas fa-comment-alt"></i></a></li>
-            <li><a href="#"><i class="fas fa-paperclip"></i></a></li>
-          </ul>
-
-        </div>
-
-      </header>
-    <main>
-      <!-- Chat -->
-     <div class="wrapper-chat">
-       <div v-for="( msg ) in filteredContacts[contactIndex].messages" :class="{'msg-friend': msg.status == 'received', 'msg-user': msg.status == 'sent' }">
-        <p>{{ msg.message }}</p>
-        <p><small>{{ msg.date }}</small></p>
+    <header>
+      <!-- Friend Info -->
+      <div class="avatar">
+        <img :src="'img/avatar' + filteredContacts[contactIndex].avatar + '.jpg'" alt="">
+        <h3>{{ filteredContacts[contactIndex].name }}</h3>
+        <p class="last-seen">Ultimo accesso {{ filteredContacts[contactIndex].dayLastSeen }} alle {{ filteredContacts[contactIndex].lastSeen }}</p>
        </div>
-     </div>
+        <!-- /Friend Info -->
+      <div class="btn-icons">
+        <ul class="list-inline">
+          <li><a href="#"><i class="fas fa-search"></i></a></li>
+          <li><a href="#"><i class="fas fa-comment-alt"></i></a></li>
+          <li><a href="#"><i class="fas fa-paperclip"></i></a></li>
+        </ul>
+      </div>
+     </header>
+     <main>
+      <!-- Chat -->
+       <div class="wrapper-chat">
+         <div v-for="( msg ) in filteredContacts[contactIndex].messages" :class="{'msg-friend': msg.status == 'received', 'msg-user': msg.status == 'sent' }">
+          <p>{{ msg.message }}</p>
+          <p><small>{{ msg.date }}</small></p>
+        </div>
+       </div>
      <!-- /Chat -->
-   </main>
-
+     </main>
       <footer>
       <!-- Input Message -->
-        <div class="input-wrapper">
-          <a href="#"><i class="far fa-smile"></i></a>
-          <input type="text" name="" value="" placeholder="scrivi qui..." class="chat-input" v-model='userMsg' @keyup.13='addMsg(contactIndex)'>
-          <a href="#"><i class="fas fa-microphone"></i></a>
+      <div class="input-wrapper">
+        <div class="top-icon" class="toggleTopMenu" @click="showEmoji = !showEmoji">
+          <div class="main-item menu" v-if="!showEmoji">
+            <a href="#"><i class="far fa-smile"></i></a>
+          </div>
+        <div v-else>
+          <ul class="list-emoji list-inline">
+            <li v-for="(emoticon, index) in emoji" class="emo" @click="addEmoji(index)">{{ emoticon }}</li>
+          </ul>
         </div>
+       </div>
+        <input type="text" name="" value="" placeholder="scrivi qui..." class="chat-input" v-model='userMsg' @keyup.13='addMsg(contactIndex)'>
+        <a href="#"><i class="fas fa-microphone"></i></a>
+      </div>
      <!-- /Input Message -->
       </footer>
   <!-- /Chat Utente -->
@@ -115,6 +117,8 @@
     <!-- Day Js -->
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <!-- /Day Js -->
+    <!-- Js -->
    <script src="js/script.js" charset="utf-8"></script>
+    <!-- /Js -->
   </body>
 </html>
