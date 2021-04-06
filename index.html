@@ -95,8 +95,8 @@
       <footer>
       <!-- Input Message -->
       <div class="input-wrapper">
-        <div class="top-icon" class="toggleTopMenu" @click="showEmoji = !showEmoji">
-          <div class="main-item menu" v-if="!showEmoji">
+          <div @click="showEmoji = !showEmoji">
+          <div v-if="!showEmoji">
             <a href="#"><i class="far fa-smile"></i></a>
           </div>
         <div v-else>
