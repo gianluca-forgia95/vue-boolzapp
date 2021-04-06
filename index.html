@@ -54,11 +54,11 @@
             <label for="src"><i class="fas fa-search"></i></label>
             <input class="src" type="text" name="" value="" placeholder="cerca o inizia una nuova chat" v-model="search">
           </div>
-          <div class="friends" v-if='contacts.length > 0'>
+           <div class="friends">
               <div class="avatar" v-for='(user, index) in filteredContacts' @click="changeUser(index)" :class=" contactIndex == index ? 'bg-grey' : '' ">
                 <img :src="'img/avatar' + filteredContacts[index].avatar + '.jpg'" :alt="user.name">
                 <h3>{{user.name}}</h3>
-                <!-- <i class="clear fas fa-archive" @click="removeChat(contactIndex)"></i> -->
+                <i class="clear fas fa-archive" @click="removeChat(index)"></i>
               </div>
           </div>
         </div>

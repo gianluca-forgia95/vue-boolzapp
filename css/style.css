@@ -146,11 +146,11 @@ input:focus {
 .friends h3 {
   cursor: pointer;
 }
-/* .clear {
+.clear {
   position: absolute;
   right: 10px;
   color: #B1B1B1;
-} */
+}
 .friends img {
   max-width: 50px;
   border-radius: 50%;

@@ -144,10 +144,10 @@ data: {
      addEmoji: function(icon){
             this.userMsg += this.emoji[icon];
         },
-        
-     // removeChat: function(chat) {
-     //    this.contacts.splice(chat, 1);
-     //  },
+
+        removeChat : function( i ){
+         this.contacts.splice(i, 1);
+        }
 
    },
 
