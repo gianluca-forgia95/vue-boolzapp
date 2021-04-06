@@ -80,9 +80,9 @@ input:focus {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 13vh;
+  height: 100%;
   background-color: #EAEAEA;
-  padding: 0 5px;
+  padding: 10px 5px;
   border-right: 1px solid #6B7376;
 }
 .avatar {
@@ -103,7 +103,7 @@ input:focus {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  height: 7vh;
+  height: 100%;
   padding: 10px 4px;
   background-color: #8EDAFC;
 }
@@ -150,6 +150,7 @@ input:focus {
   position: absolute;
   right: 10px;
   color: #B1B1B1;
+  cursor: pointer;
 }
 .friends img {
   max-width: 50px;
@@ -168,7 +169,6 @@ font-size: 11px;
   margin: auto;
   margin-top: 10px;
   padding: 0 20px;
-
 }
 .wrapper-chat small {
   font-size: 10px;
@@ -222,23 +222,14 @@ font-size: 11px;
   right: -6px;
   bottom: 0;
 }
-.delete {
-  width: 100px;
-  background-color: lightgrey;
-}
-.toogle-visible {
-  display: block;
-}
-.toggle-hiding {
-  display: none;
-}
+
+
 /* Stile Footer */
 .input-wrapper {
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin-top: 25px;
-
 }
 .input-wrapper i {
   font-size: 15px;
