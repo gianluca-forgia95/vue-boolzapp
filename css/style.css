@@ -222,6 +222,16 @@ font-size: 11px;
   right: -6px;
   bottom: 0;
 }
+.delete {
+  width: 100px;
+  background-color: lightgrey;
+}
+.toogle-visible {
+  display: block;
+}
+.toggle-hiding {
+  display: none;
+}
 /* Stile Footer */
 .input-wrapper {
   display: flex;

@@ -54,7 +54,7 @@
             <label for="src"><i class="fas fa-search"></i></label>
             <input class="src" type="text" name="" value="" placeholder="cerca o inizia una nuova chat" v-model="search">
           </div>
-           <div class="friends">
+           <div class="friends" v-if="contacts.length > 0">
               <div class="avatar" v-for='(user, index) in filteredContacts' @click="changeUser(index)" :class=" contactIndex == index ? 'bg-grey' : '' ">
                 <img :src="'img/avatar' + filteredContacts[index].avatar + '.jpg'" :alt="user.name">
                 <h3>{{user.name}}</h3>
@@ -85,7 +85,7 @@
      <main>
       <!-- Chat -->
        <div class="wrapper-chat">
-         <div v-for="( msg ) in filteredContacts[contactIndex].messages" :class="{'msg-friend': msg.status == 'received', 'msg-user': msg.status == 'sent' }">
+         <div v-for="( msg, index ) in filteredContacts[contactIndex].messages" :class="{'msg-friend': msg.status == 'received', 'msg-user': msg.status == 'sent' }">
           <p>{{ msg.message }}</p>
           <p><small>{{ msg.date }}</small></p>
         </div>

@@ -108,6 +108,7 @@ data: {
    '😺','💼','🧦'
 ],
 
+//Proprietà utili
  contactIndex: 0,
  userMsg: '',
  search: '',
@@ -115,10 +116,11 @@ data: {
 
    },
    methods: {
+   //Metodo per riconoscere l'indice del contatto
      changeUser: function(index) {
        this.contactIndex = index;
      },
-
+   // Metodo per aggiungere un messaggio
      addMsg: function(index) {
        if (this.userMsg != "" ) {
            const newMsg = {
@@ -131,7 +133,7 @@ data: {
                setTimeout( this.answerOk , 1000);
             }
          },
-
+    //Metodo per risposta auto dopo 1s
      answerOk: function() {
        const fakeAnswer = {
          message: 'ok',
@@ -140,18 +142,18 @@ data: {
        };
        this.contacts[this.contactIndex].messages.push(fakeAnswer);
      },
-
-     addEmoji: function(icon){
+   //Metodo per concatenare le emoji al testo del messaggio
+      addEmoji: function(icon){
             this.userMsg += this.emoji[icon];
         },
-
-        removeChat : function( i ){
-         this.contacts.splice(i, 1);
-        }
-
+   //Metodo per archiviare la chat
+        removeChat: function( i ){
+          this.contacts.splice(i, 1);
+        },
    },
 
    computed: {
+  //Filtro per i contatti con la ricerca
      filteredContacts: function() {
        return this.contacts.filter((contact) => {
           return contact.name.toLowerCase().match(this.search);
